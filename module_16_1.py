@@ -5,11 +5,11 @@ app = FastAPI()
 
 @app.get("/")
 async def main_page() -> dict:
-    return ({"message": "Главная страница"})
+    return {"message": "Главная страница"}
 
 
 @app.get("/user")
-async def any_user_page(username: str = "Аноним",user_id: int = 0, ) -> dict:
+async def any_user_page(username: str, user_id: int, ) -> dict:
     return {"message": "Вы вошли как пользователь {} № {}".format(username, user_id)}
 
 
