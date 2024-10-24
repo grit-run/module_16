@@ -40,7 +40,7 @@ async def update_user(user_id: Annotated[int, Path(description="real user ID")],
         raise HTTPException(status_code=404, detail="User was not exist")
 
 
-@app.delete('/user/{user_id}', response_model=User)
+@app.delete('/user/{user_id}')
 async def delete_user(
         user_id: Annotated[int, Path(description="real user ID")]) -> User:
     try:
